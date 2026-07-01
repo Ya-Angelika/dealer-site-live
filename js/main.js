@@ -44,6 +44,12 @@ $(function () {
     $(this).addClass('is-active');
   });
 
+  // Детальная авто — раскрытие оснащения комплектации (аккордеон)
+  $(document).on('click', '.mod-row', function (e) {
+    if ($(e.target).closest('a').length) return;   // клик по кнопке «Оставить заявку» не раскрывает
+    $(this).parent().toggleClass('open');
+  });
+
   // Калькулятор кредита — ползунки + аннуитетный расчёт
   (function () {
     var $price = $('#cr-price'), $down = $('#cr-down'), $term = $('#cr-term');

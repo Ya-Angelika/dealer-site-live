@@ -230,7 +230,26 @@ section{padding:64px 0}
 /* Таблица комплектаций (как на референсах) */
 .mod-eng{font-family:var(--font-display);font-size:16px;font-weight:600;padding:14px 0 8px;border-bottom:2px solid var(--text);display:inline-block;margin-bottom:6px}
 .mod-table{border-top:1px solid var(--border)}
-.mod-row{display:grid;grid-template-columns:1.5fr auto auto auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--border)}
+.mod-item{border-bottom:1px solid var(--border)}
+.mod-row{display:grid;grid-template-columns:1.5fr auto auto auto;gap:24px;align-items:center;padding:18px 0;cursor:pointer;transition:background .15s}
+.mod-row:hover{background:var(--bg-card)}
+.mod-name{display:flex;align-items:center;gap:10px}
+.mod-tog{width:22px;height:22px;flex-shrink:0;border:1.5px solid var(--border);border-radius:50%;position:relative;transition:.2s}
+.mod-tog::before,.mod-tog::after{content:'';position:absolute;background:var(--text);transition:.2s}
+.mod-tog::before{left:5px;right:5px;top:9.5px;height:1.5px}
+.mod-tog::after{top:5px;bottom:5px;left:9.5px;width:1.5px}
+.mod-item.open .mod-tog{background:var(--accent);border-color:var(--accent)}
+.mod-item.open .mod-tog::before{background:#fff}
+.mod-item.open .mod-tog::after{opacity:0}
+.mod-panel{display:none;padding:4px 0 24px}
+.mod-item.open .mod-panel{display:block}
+.mod-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;background:var(--bg-card);padding:24px}
+.mod-group h5{font-family:var(--font-display);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);margin-bottom:10px}
+.mod-group ul{list-style:none;padding:0;margin:0}
+.mod-group li{font-size:13px;color:var(--text);padding:5px 0 5px 20px;position:relative;line-height:1.35}
+.mod-group li::before{content:'';position:absolute;left:0;top:11px;width:10px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.mod-hint{font-size:12px;color:var(--text-muted);margin-top:14px}
+@media(max-width:720px){.mod-groups{grid-template-columns:1fr}}
 .mod-name{font-family:var(--font-display);font-size:17px;font-weight:600}
 .mod-feat{font-size:12px;color:var(--text-muted);margin-top:4px;max-width:360px;line-height:1.4}
 .mod-price{text-align:right;white-space:nowrap}
