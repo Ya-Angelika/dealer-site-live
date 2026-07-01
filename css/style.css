@@ -227,6 +227,18 @@ section{padding:64px 0}
 .cat-card-imglink{display:block}
 @media(max-width:1100px){.cd-top{grid-template-columns:1fr;gap:24px}.cd-info{position:static}.trim-grid{grid-template-columns:1fr}.spec-grid{grid-template-columns:1fr}.cd-credit-cta{flex-direction:column;text-align:center}}
 @media(max-width:720px){.cd-title{font-size:28px}}
+/* Таблица комплектаций (как на референсах) */
+.mod-eng{font-family:var(--font-display);font-size:16px;font-weight:600;padding:14px 0 8px;border-bottom:2px solid var(--text);display:inline-block;margin-bottom:6px}
+.mod-table{border-top:1px solid var(--border)}
+.mod-row{display:grid;grid-template-columns:1.5fr auto auto auto;gap:24px;align-items:center;padding:18px 0;border-bottom:1px solid var(--border)}
+.mod-name{font-family:var(--font-display);font-size:17px;font-weight:600}
+.mod-feat{font-size:12px;color:var(--text-muted);margin-top:4px;max-width:360px;line-height:1.4}
+.mod-price{text-align:right;white-space:nowrap}
+.mod-old{font-size:13px;color:var(--text-muted);text-decoration:line-through}
+.mod-new{font-family:var(--font-display);font-size:19px;font-weight:700}
+.mod-credit{font-size:12px;color:var(--text-muted);text-align:right;white-space:nowrap}
+.mod-credit b{color:var(--text);font-weight:700;font-size:14px}
+@media(max-width:720px){.mod-row{grid-template-columns:1fr;gap:8px}.mod-price,.mod-credit{text-align:left}}
 .contacts-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:16px}
 .contacts-info{background:var(--bg-card);padding:40px 36px}
 .contacts-info h3{font-family:var(--font-display);font-size:28px;font-weight:600;letter-spacing:-0.01em;margin-bottom:28px}
