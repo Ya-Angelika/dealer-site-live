@@ -50,30 +50,23 @@ $(function () {
     $(this).parent().toggleClass('open');
   });
 
-  // Калькулятор кредита — ползунки + аннуитетный расчёт
+  // Калькулятор кредита (layout multi-4): сумма + срок -> платёж; степперы ± меняют срок
   (function () {
-    var $price = $('#cr-price'), $down = $('#cr-down'), $term = $('#cr-term');
-    if (!$price.length) return;                 // нет калькулятора на странице — выходим
+    var $sum = $('#cr-sum'), $term = $('#cr-term');
+    if (!$sum.length) return;                     // нет калькулятора на странице
 
     function fmt(n) { return Math.round(n).toLocaleString('ru-RU'); }
     function calc() {
-      var price = +$price.val();
-      $down.attr('max', price);                  // взнос не больше стоимости авто
-      if (+$down.val() > price) $down.val(price);
-      var down = +$down.val(), term = +$term.val();
-
-      $('#cv-price').text(fmt(price) + ' ₽');
-      $('#cv-down').text(fmt(down) + ' ₽');
-      $('#cv-term').text(term + ' месяцев');
-
-      var principal = Math.max(price - down, 0), r = 0.069 / 12, pay = 0;
-      if (principal > 0) { var k = Math.pow(1 + r, term); pay = principal * r * k / (k - 1); }
-
-      $('#cv-month').html(fmt(pay) + ' ₽<small>/мес</small>');
-      $('#cv-total').text('Итого: ' + fmt(pay * term) + ' ₽ за ' + term + ' месяцев');
+      var s = +$sum.val(), t = +$term.val(), r = 0.069 / 12;
+      $('#cv-sum').text(fmt(s) + ' ₽');
+      $('#cv-term').text(t + ' мес.');
+      var k = Math.pow(1 + r, t), pay = s * r * k / (k - 1);
+      $('#cv-month').text(fmt(pay) + ' ₽');
     }
-    $(document).on('input change', '.calc-range', calc);
-    calc();                                       // первичный расчёт
+    $(document).on('input change', '.mc-range', calc);
+    $(document).on('click', '#mc-minus', function () { $term.val(Math.max(+$term.attr('min'), +$term.val() - 6)); calc(); });
+    $(document).on('click', '#mc-plus', function () { $term.val(Math.min(+$term.attr('max'), +$term.val() + 6)); calc(); });
+    calc();
   })();
 
 });
