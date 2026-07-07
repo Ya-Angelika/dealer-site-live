@@ -86,7 +86,7 @@ section{padding:64px 0}
 /* банки — белые плитки: у логотипов часто белый фон, на сером он торчал прямоугольником.
    Лого храним локально (images/logos/banks/), формат SVG/PNG с прозрачностью. */
 .bank-cell-c{background:transparent;padding:18px 14px;display:flex;align-items:center;justify-content:center;min-height:64px}
-.bank-cell-c img{max-width:100%;max-height:32px;object-fit:contain}
+.bank-cell-c img{max-width:100%;max-height:32px;object-fit:contain;mix-blend-mode:multiply}
 /* Request modal (Оставить заявку) */
 .req-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:24px;z-index:1000}
 .req-overlay.is-open{display:flex}
@@ -273,7 +273,7 @@ section{padding:64px 0}
 .calc-result{background:var(--bg-dark);color:var(--text-on-dark);padding:32px 28px}
 .calc-lead{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
 .calc-lead button{grid-column:1/-1}
-.calc-lead input{padding:13px 16px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);color:var(--text);font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .15s}
+.calc-lead input{padding:13px 16px;background:#fff;border:1.5px solid #cbd2dd;border-radius:var(--r);color:var(--text);font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .15s}
 .calc-lead input::placeholder{color:var(--text-muted)}
 .calc-lead input:focus{border-color:var(--accent)}
 .calc-lead-done{color:var(--text);font-size:14px;line-height:1.5;padding:8px 0}
@@ -385,8 +385,7 @@ section{padding:64px 0}
 .ct-lbl{font-size:10px;opacity:0.6;text-transform:uppercase;letter-spacing:0.08em}
 @media (max-width:1100px){.sb2{grid-template-columns:1fr;padding:32px}.sb2-text h3{font-size:28px}.sb2-img{min-height:200px}.sb2-disc{width:80px;height:80px}.sb2-disc b{font-size:15px}}
 .trade-form-block{background:var(--bg-card);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden}
-.tf-img{background:linear-gradient(135deg,#2a2a2a,#0a0a0a);min-height:520px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.2);font-family:ui-monospace,monospace;font-size:13px}
-.tf-img::after{content:'IMG · оценка авто · 600×520'}
+.tf-img{background:#0a0a0a url('../images/tradein-otsenka-taxi.jpg') center/cover no-repeat;min-height:520px}
 .tf-wrap{padding:40px;display:flex;flex-direction:column;gap:18px}
 .tf-stats{display:inline-flex;gap:24px;padding:14px 20px;background:var(--bg);border:1px solid var(--border);border-radius:var(--r);align-self:flex-start}
 .tf-stat-num{font-family:var(--font-display);font-size:22px;font-weight:700;color:var(--accent);line-height:1}
