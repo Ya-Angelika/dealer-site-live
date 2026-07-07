@@ -69,19 +69,29 @@ $(function () {
     calc();
   })();
 
-  // Модалка «Оставить заявку» (герой главной; зеркалит инлайн-скрипт из build_site.py)
-  function reqOpen()  { $('#reqModal').addClass('is-open'); $('body').css('overflow', 'hidden'); }
-  function reqClose() { $('#reqModal').removeClass('is-open'); $('body').css('overflow', ''); }
-  $(document).on('click', '.js-req-open', function (e) { e.preventDefault(); reqOpen(); });
-  $(document).on('click', '.js-req-close', reqClose);
-  $(document).on('click', '#reqModal', function (e) { if (e.target.id === 'reqModal') reqClose(); });
-  $(document).on('keydown', function (e) { if (e.key === 'Escape') reqClose(); });
-  $(document).on('submit', '.js-req-form', function (e) {
+  // Модалки заявка/кредит/обмен: .js-modal-open[data-modal][data-car] (зеркалит инлайн-скрипт build_site.py)
+  function modalClose() { $('.req-overlay.is-open').removeClass('is-open'); $('body').css('overflow', ''); }
+  $(document).on('click', '.js-modal-open', function (e) {
     e.preventDefault();
-    $(this).closest('.req-card').html(
-      '<button type="button" class="req-close js-req-close" aria-label="Закрыть">×</button>' +
-      '<h3 class="req-title">Заявка отправлена!</h3>' +
-      '<p class="req-sub">Спасибо! Мы свяжемся с вами в ближайшее время.</p>');
+    var $m = $('#' + $(this).attr('data-modal'));
+    var car = $(this).attr('data-car');
+    if (car) $m.find('.mdl-car').text(car);
+    $m.addClass('is-open'); $('body').css('overflow', 'hidden');
+  });
+  $(document).on('click', '.js-modal-close', modalClose);
+  $(document).on('click', '.req-overlay', function (e) { if (e.target === this) modalClose(); });
+  $(document).on('keydown', function (e) { if (e.key === 'Escape') modalClose(); });
+  $(document).on('submit', '.js-modal-form', function (e) {
+    e.preventDefault();
+    var $card = $(this).closest('.req-card');
+    if ($card.length) {
+      $card.html(
+        '<button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>' +
+        '<h3 class="req-title">Заявка отправлена!</h3>' +
+        '<p class="req-sub">Спасибо! Мы свяжемся с вами в ближайшее время.</p>');
+    } else {
+      $(this).html('<div class="calc-lead-done">Заявка отправлена! Свяжемся с вами в ближайшее время.</div>');
+    }
   });
 
 });

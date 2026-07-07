@@ -98,6 +98,19 @@ section{padding:64px 0}
 .req-input{width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:var(--radius-btn,8px);background:var(--bg);color:var(--text);font-family:var(--font-body);font-size:14px}
 .req-input:focus{outline:none;border-color:var(--accent)}
 .req-note{font-size:11px;color:var(--text-muted);margin-top:14px;line-height:1.4}
+.mdl-car{color:var(--accent);font-weight:700}
+/* Преимущества-оверлей (фото-фон + карточки поверх), шаблон about-v2-overlay */
+.ao-head{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.ao-line{width:48px;height:2px;background:var(--accent)}
+.ao-banner{position:relative;border-radius:12px;overflow:hidden;min-height:440px;display:flex;align-items:center;justify-content:flex-end;padding:32px}
+.ao-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.ao-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,20,0.30) 0%,rgba(8,12,20,0.52) 55%,rgba(8,12,20,0.72) 100%)}
+.ao-cards{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;width:46%;max-width:440px}
+.ao-card{background:var(--bg-card);border-radius:12px;padding:18px 20px;display:flex;gap:16px;align-items:flex-start}
+.ao-ic{flex:0 0 44px;width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center}
+.ao-ic svg{width:22px;height:22px;stroke:currentColor;stroke-width:1.6;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.ao-tx h4{font-family:var(--font-display);font-size:17px;font-weight:700;color:var(--text);margin-bottom:4px}
+.ao-tx p{font-size:13px;color:var(--text-muted);line-height:1.45}
 /* STATS */
 .stats-strip{background:var(--bg-dark);color:var(--text-on-dark);padding:48px 0}
 .stats-grid-c{display:grid;grid-template-columns:repeat(4,1fr);gap:32px}
@@ -181,6 +194,7 @@ section{padding:64px 0}
   .brands-grid-c{grid-template-columns:repeat(3,1fr)}
   .brand-card{min-height:100px;padding:14px 8px}.brand-card img{height:40px}.brand-name{font-size:11px}
   .stat-num-c{font-size:38px}.banks-row-c{grid-template-columns:repeat(2,1fr)}
+  .ao-cards{width:100%;max-width:none}.ao-banner{justify-content:center;min-height:auto;padding:20px}
 }
 .cat-layout{display:grid;grid-template-columns:260px 1fr;gap:24px}
 .cat-sidebar{background:var(--bg-card);padding:24px;height:fit-content;position:sticky;top:90px}
@@ -257,10 +271,12 @@ section{padding:64px 0}
 .calc-slider-fill{position:absolute;left:0;top:0;height:100%;background:var(--accent)}
 .calc-slider-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:20px;height:20px;background:var(--accent);border-radius:50%}
 .calc-result{background:var(--bg-dark);color:var(--text-on-dark);padding:32px 28px}
-.calc-lead{display:flex;flex-direction:column;gap:10px;margin-top:20px}
+.calc-lead{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}
+.calc-lead button{grid-column:1/-1}
 .calc-lead input{padding:13px 16px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.18);border-radius:var(--r);color:#fff;font-family:var(--font-body);font-size:14px;outline:none;transition:border-color .15s}
 .calc-lead input::placeholder{color:rgba(255,255,255,0.5)}
 .calc-lead input:focus{border-color:var(--accent)}
+.calc-lead-done{color:#fff;font-size:14px;line-height:1.5;padding:8px 0}
 .mc-wrap{display:grid;grid-template-columns:1fr 1fr;gap:20px;background:var(--bg-card);padding:28px}
 .mc-left,.mc-right{background:var(--bg);border:1px solid var(--border);padding:26px}
 .mc-right{display:flex;flex-direction:column}

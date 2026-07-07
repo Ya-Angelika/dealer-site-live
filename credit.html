@@ -38,18 +38,25 @@
     <div class="mc-offer-t">Наше предложение</div>
     <div class="mc-pay"><span class="mc-paylbl">Ежемесячный платёж</span><div class="mc-payv"><button type="button" class="mc-step" id="mc-minus">−</button><span class="mc-pval" id="cv-month">31 280 ₽</span><button type="button" class="mc-step" id="mc-plus">+</button></div></div>
     <div class="mc-info">Расчёт носит информационный характер, не является публичной офертой. Ставка от 4,9% годовых.</div>
-    <div class="mc-btns"><a href="#cta" class="btn btn-outline">Получить консультацию</a><a href="#cta" class="btn btn-primary">Оставить заявку</a></div>
+    <form class="calc-lead js-modal-form">
+      <input type="text" placeholder="Ваше имя" required>
+      <input type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary" style="width:100%">Оставить заявку</button>
+    </form>
   </div>
 </div>
 </div></section>
 
 <section style="background:var(--bg-card)"><div class="container">
-<div class="section-head"><div class="eyebrow">Условия</div><h2>Преимущества</h2></div>
-<div class="cond-grid">
-  <div class="cond-item"><div class="cond-num">96%</div><div class="cond-name">Одобрений</div><div class="cond-desc">12 банков-партнёров.</div></div>
-  <div class="cond-item"><div class="cond-num">4,9%</div><div class="cond-name">Минимальная ставка</div><div class="cond-desc">Партнёрские программы.</div></div>
-  <div class="cond-item"><div class="cond-num">7 лет</div><div class="cond-name">Максимальный срок</div><div class="cond-desc">Растяните платёж.</div></div>
-  <div class="cond-item"><div class="cond-num">0%</div><div class="cond-name">Без КАСКО</div><div class="cond-desc">При взносе от 30%.</div></div>
+<div class="ao-head"><span class="ao-line"></span><h2>Преимущества автокредита</h2></div>
+<div class="ao-banner">
+  <div class="ao-bg" style="background-image:url('images/credit-advantages-taxi.jpg')"></div>
+  <div class="ao-cards">
+    <div class="ao-card"><div class="ao-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></svg></div><div class="ao-tx"><h4>96% одобрений</h4><p>Партнёрские программы 12 банков — высокий шанс одобрения по автокредиту.</p></div></div>
+    <div class="ao-card"><div class="ao-ic"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><div class="ao-tx"><h4>Ставка от 4,9%</h4><p>Выгодные условия и государственные программы льготного кредитования.</p></div></div>
+    <div class="ao-card"><div class="ao-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div class="ao-tx"><h4>Срок до 7 лет</h4><p>Растяните платёж и снизьте ежемесячную нагрузку на бюджет.</p></div></div>
+    <div class="ao-card"><div class="ao-ic"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.6-3 7.6-7 9-4-1.4-7-4.4-7-9V6z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="ao-tx"><h4>Без КАСКО</h4><p>Оформление без обязательного КАСКО при первоначальном взносе от 30%.</p></div></div>
+  </div>
 </div>
 </div></section>
 
@@ -110,16 +117,41 @@
     </div>
   </div>
 </footer>
-
 <div class="req-overlay" id="reqModal" aria-hidden="true">
   <div class="req-card" role="dialog" aria-modal="true" aria-label="Оставить заявку">
-    <button type="button" class="req-close js-req-close" aria-label="Закрыть">×</button>
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
     <h3 class="req-title">Оставить заявку</h3>
     <p class="req-sub">Оставьте контакты — менеджер перезвонит в течение 15 минут и подберёт автомобиль на выгодных условиях.</p>
-    <form class="req-form js-req-form">
+    <form class="req-form js-modal-form">
       <input class="req-input" type="text" placeholder="Ваше имя" required>
       <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
       <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Отправить заявку</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="creditModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заявка на автокредит">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заявка на автокредит</h3>
+    <p class="req-sub">Рассчитаем кредит на <b class="mdl-car">выбранный автомобиль</b> и перезвоним в течение 15 минут.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Рассчитать кредит</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="tradeinModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Обмен автомобиля">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Обмен автомобиля</h3>
+    <p class="req-sub">Оценим ваш автомобиль в зачёт <b class="mdl-car">нового авто</b> — предложим цену выше рынка на 5–10%.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Оценить обмен</button>
     </form>
     <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
   </div>

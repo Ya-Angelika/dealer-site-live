@@ -67,16 +67,41 @@
     </div>
   </div>
 </footer>
-
 <div class="req-overlay" id="reqModal" aria-hidden="true">
   <div class="req-card" role="dialog" aria-modal="true" aria-label="Оставить заявку">
-    <button type="button" class="req-close js-req-close" aria-label="Закрыть">×</button>
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
     <h3 class="req-title">Оставить заявку</h3>
     <p class="req-sub">Оставьте контакты — менеджер перезвонит в течение 15 минут и подберёт автомобиль на выгодных условиях.</p>
-    <form class="req-form js-req-form">
+    <form class="req-form js-modal-form">
       <input class="req-input" type="text" placeholder="Ваше имя" required>
       <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
       <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Отправить заявку</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="creditModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заявка на автокредит">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заявка на автокредит</h3>
+    <p class="req-sub">Рассчитаем кредит на <b class="mdl-car">выбранный автомобиль</b> и перезвоним в течение 15 минут.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Рассчитать кредит</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="tradeinModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Обмен автомобиля">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Обмен автомобиля</h3>
+    <p class="req-sub">Оценим ваш автомобиль в зачёт <b class="mdl-car">нового авто</b> — предложим цену выше рынка на 5–10%.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Оценить обмен</button>
     </form>
     <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
   </div>
