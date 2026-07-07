@@ -14,7 +14,7 @@
     <nav class="head-nav"><a href="auto.html">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html">Контакты</a></nav>
     <div class="head-actions">
       <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
-      <a href="quiz.html" class="btn btn-primary btn-sm">Подобрать авто</a>
+      <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
     </div>
   </div>
 </header>
@@ -220,7 +220,7 @@
     <div class="section-head"><div class="eyebrow">Банки-партнёры</div>
     <h2>12+ банков для кредита</h2>
     <p>Подберём вам выгодные условия. Решение онлайн за 15 минут.</p></div>
-    <div class="banks-row-c" style="background:var(--bg);padding:24px"><div class="bank-cell-c"><img src="images/logos/banks/sber.png" alt="Сбер" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/alfa.png" alt="Альфа-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/tbank.svg" alt="Т-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/gazprom.png" alt="Газпромбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/rshb.png" alt="Россельхозбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/otp.png" alt="ОТП БАНК" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/pochta.png" alt="Почта Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/absolut.png" alt="Абсолют Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/expo.png" alt="Экспобанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/zenit.png" alt="Банк Зенит" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/akbars.png" alt="Ак Барс Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/sovkom.png" alt="Совкомбанк" loading="lazy"></div></div>
+    <div class="banks-row-c" style="padding:24px"><div class="bank-cell-c"><img src="images/logos/banks/sber.png" alt="Сбер" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/alfa.png" alt="Альфа-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/tbank.svg" alt="Т-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/gazprom.png" alt="Газпромбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/rshb.png" alt="Россельхозбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/otp.png" alt="ОТП БАНК" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/pochta.png" alt="Почта Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/absolut.png" alt="Абсолют Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/expo.png" alt="Экспобанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/zenit.png" alt="Банк Зенит" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/akbars.png" alt="Ак Барс Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/sovkom.png" alt="Совкомбанк" loading="lazy"></div></div>
     <div style="margin-top:24px"><a href="credit.html" class="btn btn-primary">Рассчитать кредит →</a></div>
   </div>
 </section>
@@ -319,6 +319,19 @@
       <input class="req-input" type="text" placeholder="Ваше имя" required>
       <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
       <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Оценить обмен</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="callModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заказать звонок">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заказать звонок</h3>
+    <p class="req-sub">Оставьте номер — перезвоним в течение 15 минут и ответим на все вопросы.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Заказать звонок</button>
     </form>
     <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
   </div>
