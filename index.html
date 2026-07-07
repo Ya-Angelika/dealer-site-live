@@ -56,7 +56,8 @@
 <section><div class="container">
 <div class="section-head row"><div><div class="eyebrow">В наличии</div><h2>Новые поступления</h2></div>
 <a href="auto.html" class="btn btn-outline">Весь каталог →</a></div>
-<div class="cat-mini-scroll"><article class="cat-card-r">
+<div class="carousel" data-carousel>
+  <div class="cat-mini-scroll" data-carousel-track><article class="cat-card-r">
   <div class="cat-card-tag-r">Хит</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div></a>
   <div class="cat-card-body-r">
@@ -213,6 +214,12 @@
     </div>
   </div>
 </article></div>
+  <div class="carousel-foot">
+    <button type="button" class="carousel-btn" data-carousel-prev aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <div class="carousel-counter"><b data-carousel-current>1</b> / <span data-carousel-total>12</span></div>
+    <button type="button" class="carousel-btn" data-carousel-next aria-label="Вперёд"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+  </div>
+</div>
 </div></section>
 
 <section style="background:var(--bg-card)">
