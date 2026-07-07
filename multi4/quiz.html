@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Подбор авто · АЦ АВТОСАЛОН</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="head">
+  <div class="container head-inner">
+    <a href="index.html" class="head-brand">АЦ<span> · </span>АВТОСАЛОН</a>
+    <nav class="head-nav"><a href="auto.html">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html">Контакты</a></nav>
+    <div class="head-actions">
+      <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
+      <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+<section class="page-hero"><div class="container">
+<div class="breadcrumb"><a href="index.html">Главная</a> · <span>Подбор авто</span></div>
+<h1>Помощь<br>в <span>подборе</span></h1><p class="ph-sub">3 вопроса — и подберём идеальный автомобиль.</p>
+</div></section>
+<section><div class="container" style="max-width:920px">
+<div class="quiz-wrap">
+  <div class="quiz-consultant">
+    <div class="qc-avatar">Н</div>
+    <div><div class="qc-name">Наталья</div><div class="qc-role">Персональный консультант</div></div>
+  </div>
+  <div class="quiz-progress"><div class="quiz-progress-fill"></div></div>
+  <div class="quiz-step-label">Шаг 1 из 3 · ~ 30 секунд</div>
+  <div class="quiz-question">Здравствуйте! Какой марки автомобиль вас интересует?</div>
+  <div class="quiz-options"><button class="quiz-option" type="button">Geely</button><button class="quiz-option is-active" type="button">Haval</button><button class="quiz-option" type="button">Chery</button><button class="quiz-option" type="button">EXEED</button><button class="quiz-option" type="button">Omoda</button><button class="quiz-option" type="button">Tenet</button><button class="quiz-option" type="button">Belgee</button><button class="quiz-option" type="button">Jaecoo</button></div>
+  <div class="quiz-controls">
+    <button class="btn btn-ghost" type="button" disabled>← Назад</button>
+    <button class="btn btn-primary" type="button">Далее →</button>
+  </div>
+</div>
+</div></section>
+
+
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">АЦ<span> · </span>АВТОСАЛОН</div>
+        <div class="foot-tagline">Официальный дилер · 240+ авто в наличии · с 2010 года</div>
+      </div>
+      <nav class="foot-nav">
+        <a href="auto.html">Каталог</a>
+        <a href="credit.html">Автокредит</a>
+        <a href="tradein.html">Обмен авто</a>
+        <a href="stocks.html">Акции</a>
+        <a href="quiz.html">Подбор авто</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <div class="foot-contacts">
+        <div class="foot-phone">+7 (968) 655-19-72</div>
+        <div class="foot-hours">Ежедневно с 9:00 до 21:00</div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 АЦ АВТОСАЛОН</div>
+      <div>Политика · Условия · Cookies</div>
+    </div>
+  </div>
+</footer>
+<div class="req-overlay" id="reqModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Оставить заявку">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Оставить заявку</h3>
+    <p class="req-sub">Оставьте контакты — менеджер перезвонит в течение 15 минут и подберёт автомобиль на выгодных условиях.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Отправить заявку</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="creditModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заявка на автокредит">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заявка на автокредит</h3>
+    <p class="req-sub">Рассчитаем кредит на <b class="mdl-car">выбранный автомобиль</b> и перезвоним в течение 15 минут.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Рассчитать кредит</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="tradeinModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Обмен автомобиля">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Обмен автомобиля</h3>
+    <p class="req-sub">Оценим ваш автомобиль в зачёт <b class="mdl-car">нового авто</b> — предложим цену выше рынка на 5–10%.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Оценить обмен</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="callModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заказать звонок">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заказать звонок</h3>
+    <p class="req-sub">Оставьте номер — перезвоним в течение 15 минут и ответим на все вопросы.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Заказать звонок</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

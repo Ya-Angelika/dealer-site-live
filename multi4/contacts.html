@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Контакты · АЦ АВТОСАЛОН</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="head">
+  <div class="container head-inner">
+    <a href="index.html" class="head-brand">АЦ<span> · </span>АВТОСАЛОН</a>
+    <nav class="head-nav"><a href="auto.html">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html" class="is-active">Контакты</a></nav>
+    <div class="head-actions">
+      <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
+      <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+    </div>
+  </div>
+</header>
+<section class="page-hero"><div class="container">
+<div class="breadcrumb"><a href="index.html">Главная</a> · <span>Контакты</span></div>
+<h1><span>Контакты</span> и адрес</h1><p class="ph-sub">Приезжайте в наш салон. Ежедневно с 9:00 до 21:00.</p>
+</div></section>
+<section><div class="container">
+<div class="contacts-grid">
+  <div class="contacts-info">
+    <h3>Связаться с нами</h3>
+    <div class="contact-row"><div class="contact-label">Адрес</div><div class="contact-value">г. Москва, ул. Название 3, стр. 4 корп. 3/2</div></div>
+    <div class="contact-row"><div class="contact-label">Телефон</div><div class="contact-value">+7 (968) 655-19-72</div></div>
+    <div class="contact-row"><div class="contact-label">Часы работы</div><div class="contact-value">Ежедневно с 9:00 до 21:00</div></div>
+    <div class="contact-row"><div class="contact-label">Email</div><div class="contact-value">info@dealer.ru</div></div>
+    <div class="contact-row"><div class="contact-label">Метро</div><div class="contact-value">5 мин пешком от «Беговой»</div></div>
+  </div>
+  <div class="contacts-map"></div>
+</div>
+</div></section>
+
+<section style="background:var(--bg-card)"><div class="container">
+<div class="fb-block">
+  <div>
+    <div class="eyebrow">Обратная связь</div>
+    <h2 style="font-family:var(--font-display);font-size:32px;font-weight:600">Напишите нам</h2>
+    <p style="font-size:15px;color:var(--text-muted);margin-top:12px;max-width:380px">Менеджер ответит за 15 минут.</p>
+  </div>
+  <form class="fb-form" onsubmit="event.preventDefault()">
+    <input placeholder="Ваше имя">
+    <input type="tel" placeholder="+7 (___) ___-__-__">
+    <input type="email" placeholder="Email (необязательно)">
+    <button class="btn btn-primary" type="submit">Отправить</button>
+  </form>
+</div>
+</div></section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand">АЦ<span> · </span>АВТОСАЛОН</div>
+        <div class="foot-tagline">Официальный дилер · 240+ авто в наличии · с 2010 года</div>
+      </div>
+      <nav class="foot-nav">
+        <a href="auto.html">Каталог</a>
+        <a href="credit.html">Автокредит</a>
+        <a href="tradein.html">Обмен авто</a>
+        <a href="stocks.html">Акции</a>
+        <a href="quiz.html">Подбор авто</a>
+        <a href="contacts.html">Контакты</a>
+      </nav>
+      <div class="foot-contacts">
+        <div class="foot-phone">+7 (968) 655-19-72</div>
+        <div class="foot-hours">Ежедневно с 9:00 до 21:00</div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 АЦ АВТОСАЛОН</div>
+      <div>Политика · Условия · Cookies</div>
+    </div>
+  </div>
+</footer>
+<div class="req-overlay" id="reqModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Оставить заявку">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Оставить заявку</h3>
+    <p class="req-sub">Оставьте контакты — менеджер перезвонит в течение 15 минут и подберёт автомобиль на выгодных условиях.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Отправить заявку</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="creditModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заявка на автокредит">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заявка на автокредит</h3>
+    <p class="req-sub">Рассчитаем кредит на <b class="mdl-car">выбранный автомобиль</b> и перезвоним в течение 15 минут.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Рассчитать кредит</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="tradeinModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Обмен автомобиля">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Обмен автомобиля</h3>
+    <p class="req-sub">Оценим ваш автомобиль в зачёт <b class="mdl-car">нового авто</b> — предложим цену выше рынка на 5–10%.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Оценить обмен</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+<div class="req-overlay" id="callModal" aria-hidden="true">
+  <div class="req-card" role="dialog" aria-modal="true" aria-label="Заказать звонок">
+    <button type="button" class="req-close js-modal-close" aria-label="Закрыть">×</button>
+    <h3 class="req-title">Заказать звонок</h3>
+    <p class="req-sub">Оставьте номер — перезвоним в течение 15 минут и ответим на все вопросы.</p>
+    <form class="req-form js-modal-form">
+      <input class="req-input" type="text" placeholder="Ваше имя" required>
+      <input class="req-input" type="tel" placeholder="+7 (___) ___-__-__" required>
+      <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Заказать звонок</button>
+    </form>
+    <p class="req-note">Нажимая кнопку, вы соглашаетесь с политикой обработки персональных данных.</p>
+  </div>
+</div>
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
