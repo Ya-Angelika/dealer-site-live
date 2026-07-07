@@ -1,11 +1,11 @@
 :root {
-  --accent: #3F3AE0;
+  --accent: #5A54F0;
   --text: #14152B;
   --text-muted: rgba(20,21,43,0.62);
   --text-on-dark: #FFFFFF;
   --bg: #FFFFFF;
   --bg-card: #F2F2FB;
-  --bg-dark: #2A2480;
+  --bg-dark: #14103C;
   --border: rgba(20,21,80,0.10);
   --r: 10px;
   --font-display: 'Manrope', sans-serif;
