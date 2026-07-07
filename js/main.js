@@ -69,4 +69,19 @@ $(function () {
     calc();
   })();
 
+  // Модалка «Оставить заявку» (герой главной; зеркалит инлайн-скрипт из build_site.py)
+  function reqOpen()  { $('#reqModal').addClass('is-open'); $('body').css('overflow', 'hidden'); }
+  function reqClose() { $('#reqModal').removeClass('is-open'); $('body').css('overflow', ''); }
+  $(document).on('click', '.js-req-open', function (e) { e.preventDefault(); reqOpen(); });
+  $(document).on('click', '.js-req-close', reqClose);
+  $(document).on('click', '#reqModal', function (e) { if (e.target.id === 'reqModal') reqClose(); });
+  $(document).on('keydown', function (e) { if (e.key === 'Escape') reqClose(); });
+  $(document).on('submit', '.js-req-form', function (e) {
+    e.preventDefault();
+    $(this).closest('.req-card').html(
+      '<button type="button" class="req-close js-req-close" aria-label="Закрыть">×</button>' +
+      '<h3 class="req-title">Заявка отправлена!</h3>' +
+      '<p class="req-sub">Спасибо! Мы свяжемся с вами в ближайшее время.</p>');
+  });
+
 });
