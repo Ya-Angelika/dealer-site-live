@@ -418,7 +418,7 @@ section{padding:64px 0}
 .trade-banner h2{font-family:var(--font-display);font-size:36px;font-weight:600;line-height:1.05;margin-bottom:14px}
 .trade-banner h2 span{color:var(--accent)}
 .trade-banner p{font-size:15px;opacity:.85;max-width:440px;line-height:1.5;margin-bottom:22px}
-.tb-scene{position:relative;background:#0a0a0a center/cover no-repeat;min-height:300px;overflow:hidden}
+.tb-scene{position:relative;background:var(--bg-dark) center/cover no-repeat;min-height:300px;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 88% 92% at 55% 50%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 88% 92% at 55% 50%,#000 58%,transparent 100%)}
 .tb-car{position:absolute;top:50%;transform:translateY(-50%);background-repeat:no-repeat;background-position:center;background-size:contain;height:58%}
 .tb-old{left:-4%;width:52%;opacity:.42;filter:grayscale(.5)}
 .tb-new{right:-2%;width:64%}
