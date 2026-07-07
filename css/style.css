@@ -319,6 +319,33 @@ section{padding:64px 0}
 .rule-text strong{display:block;font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px}
 .calc-range{width:100%;height:8px;accent-color:var(--accent);cursor:pointer;margin-top:10px}
 .calc-value{font-variant-numeric:tabular-nums}
+/* calc-multi-3 (из библиотеки, адаптирован под токены темы) */
+.c3-title{font-family:var(--font-display);font-size:26px;font-weight:700;margin-bottom:18px}
+.c3-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:stretch}
+.c3-left{background:var(--bg-card);border-radius:12px;padding:24px}
+.c3-right{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:26px}
+.c3-field{background:#eef1f6;border-radius:8px;padding:12px 16px;margin-bottom:14px}
+.c3-flabel{font-size:11px;color:var(--text-muted)}
+.c3-fval{font-size:17px;font-weight:700}
+.c3-pencil{color:#9aa1b0;float:right;font-size:13px}
+.c3-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.c3-track{height:4px;background:#e3e6ee;border-radius:2px;position:relative;margin:8px 0}
+.c3-fill{position:absolute;height:100%;border-radius:2px;background:var(--accent)}
+.c3-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+.c3-res{display:flex;gap:40px;margin:14px 0}
+.c3-reslbl{font-size:12px;color:var(--text-muted)}
+.c3-resval{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--accent)}
+.c3-note{font-size:11px;color:#9aa1b0}
+.c3-rtitle{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px}
+.c3-rsub{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:18px}
+.c3-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.c3-inp{padding:13px 14px;border:1px solid #d7dcea;border-radius:8px;font-size:13px;outline:none;font-family:var(--font-body)}
+.c3-inp:focus{border-color:var(--accent)}
+.c3-foot{display:flex;align-items:center;gap:16px}
+.c3-consent{font-size:11px;color:#9aa1b0;line-height:1.4;flex:1}
+.c3-consent a{color:var(--accent)}
+.c3-btn{padding:14px 22px;background:var(--bg-dark);color:#fff;border:none;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;white-space:nowrap}
+@media(max-width:900px){.c3-grid{grid-template-columns:1fr}.c3-form{grid-template-columns:1fr}.c3-foot{flex-direction:column;align-items:stretch}}
 @media (max-width:1100px){
   .calc-wrap{grid-template-columns:1fr}.calc-img{min-height:300px}.calc-content{padding:28px}
   .cond-grid{grid-template-columns:repeat(2,1fr);gap:28px}.cond-item{border-right:0;padding:0}
@@ -363,6 +390,20 @@ section{padding:64px 0}
   .teaser-grid{grid-template-columns:1fr}.cat-mini-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){.hero2-text h1{font-size:30px}.hero2-banner{padding:28px 20px}.cat-mini-grid{grid-template-columns:1fr}}
+/* hero-v5-bigtype (из библиотеки, адаптирован под токены темы) */
+.hero-v5-bigtype{display:grid;grid-template-columns:1fr 1.15fr;min-height:360px;background:var(--bg-dark);border-radius:var(--r);overflow:hidden}
+.hero-v5-bigtype .h5-panel{padding:46px 44px;display:flex;flex-direction:column;justify-content:center;color:var(--text-on-dark)}
+.hero-v5-bigtype .h5-title{font-family:var(--font-display);font-size:56px;font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.98;margin-bottom:16px}
+.hero-v5-bigtype .h5-title span{color:var(--accent)}
+.hero-v5-bigtype .h5-sub{font-size:15px;opacity:0.78;line-height:1.5;margin-bottom:26px;max-width:440px}
+.hero-v5-bigtype .h5-btn{width:100%;justify-content:center}
+.hero-v5-bigtype .h5-photo{background:var(--bg-card);position:relative;min-height:360px;background-repeat:no-repeat;background-position:center;background-size:contain}
+.hero-v5-bigtype .h5-nav{position:absolute;bottom:16px;left:24px;display:flex;align-items:center;gap:10px}
+.hero-v5-bigtype .h5-nav .dots{display:flex;gap:6px}
+.hero-v5-bigtype .h5-nav .dots span{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.18)}
+.hero-v5-bigtype .h5-nav .dots span.on{background:var(--accent)}
+.hero-v5-bigtype .h5-nav .arw{color:rgba(0,0,0,0.4);font-size:16px}
+@media (max-width:900px){.hero-v5-bigtype{grid-template-columns:1fr}.hero-v5-bigtype .h5-title{font-size:40px}.hero-v5-bigtype .h5-photo{min-height:240px}}
 .quiz-wrap{background:var(--bg-card);padding:48px}
 .quiz-consultant{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)}
 .qc-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--bg-dark));flex:0 0 60px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-display);font-size:24px;font-weight:700}
