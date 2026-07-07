@@ -97,17 +97,19 @@ $(function () {
 });
 
 
-/* Карусель «Новые поступления»: стрелки перелистывания + счётчик снизу */
+/* Карусель «Новые поступления»: стрелки перелистывания + точки-пагинация */
 (function(){
   var list = document.querySelectorAll('[data-carousel]');
   for (var k=0;k<list.length;k++){ (function(c){
     var track=c.querySelector('[data-carousel-track]'); if(!track) return;
     var prev=c.querySelector('[data-carousel-prev]'), next=c.querySelector('[data-carousel-next]');
-    var cur=c.querySelector('[data-carousel-current]'), tot=c.querySelector('[data-carousel-total]');
-    var cards=track.children;
-    if(tot) tot.textContent=cards.length;
+    var dotsBox=c.querySelector('[data-carousel-dots]');
+    var cards=track.children, n=cards.length;
     function step(){ var f=cards[0]; if(!f) return 300; var s=getComputedStyle(track); var g=parseFloat(s.columnGap||s.gap)||16; return f.getBoundingClientRect().width+g; }
-    function update(){ var st=step(), max=cards.length-1; var idx=Math.round(track.scrollLeft/st); if(idx<0)idx=0; if(idx>max)idx=max; if(cur)cur.textContent=idx+1; if(prev)prev.disabled=track.scrollLeft<=2; if(next)next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2; }
+    var dots=[];
+    if(dotsBox){ dotsBox.innerHTML=''; for(var i=0;i<n;i++){ (function(idx){ var d=document.createElement('button'); d.type='button'; d.className='carousel-dot'; d.setAttribute('aria-label','Слайд '+(idx+1)); d.addEventListener('click',function(){ track.scrollTo({left:step()*idx,behavior:'smooth'}); }); dotsBox.appendChild(d); dots.push(d); })(i); } }
+    function activeIndex(){ var st=step(), idx=Math.round(track.scrollLeft/st); if(idx<0)idx=0; if(idx>n-1)idx=n-1; return idx; }
+    function update(){ var idx=activeIndex(); for(var j=0;j<dots.length;j++){ dots[j].classList.toggle('is-active',j===idx); } if(prev)prev.disabled=track.scrollLeft<=2; if(next)next.disabled=track.scrollLeft>=track.scrollWidth-track.clientWidth-2; }
     if(prev) prev.addEventListener('click',function(){ track.scrollBy({left:-step(),behavior:'smooth'}); });
     if(next) next.addEventListener('click',function(){ track.scrollBy({left:step(),behavior:'smooth'}); });
     track.addEventListener('scroll',update); window.addEventListener('resize',update); update();
