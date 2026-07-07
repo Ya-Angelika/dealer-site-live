@@ -383,15 +383,23 @@ section{padding:64px 0}
 .sb2-text h3{font-family:var(--font-display);font-size:42px;font-weight:600;line-height:1;letter-spacing:-.02em;margin-bottom:14px}
 .sb2-text h3 span{color:var(--accent)}
 .sb2-text p{opacity:.8;font-size:15px;line-height:1.5;max-width:470px;margin-bottom:22px}
-.sb2-img{position:relative;align-self:stretch;min-height:300px;background-repeat:no-repeat;background-position:center;background-size:cover;border-radius:var(--r)}
-.sb2-disc{position:absolute;right:4%;top:8px;width:100px;height:100px;border-radius:50%;background:var(--accent);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-8deg);box-shadow:0 8px 24px rgba(0,0,0,.45);z-index:2}
-.sb2-disc span{font-size:9px;text-transform:uppercase;letter-spacing:.08em;opacity:.9}
-.sb2-disc b{font-family:var(--font-display);font-size:19px;line-height:1.05;margin-top:2px}
+.sb2-collage{position:relative;align-self:stretch;min-height:340px;border-radius:var(--r);overflow:hidden;background:radial-gradient(120% 120% at 50% 38%,#f7c7ca 0%,#e7a4a9 100%)}
+.sbc-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(0,0,0,.13) 1.2px,transparent 1.2px);background-size:17px 17px;opacity:.55}
+.sbc-panel{position:absolute;border-radius:14px;overflow:hidden;transform:skewX(-9deg);box-shadow:0 14px 32px rgba(0,0,0,.38);background:#1b1b1e}
+.sbc-panel i{position:absolute;inset:-14%;display:block;transform:skewX(9deg);background:#1b1b1e center/cover no-repeat}
+.sbc-p1{width:52%;height:45%;top:6%;left:27%;z-index:2}
+.sbc-p2{width:50%;height:45%;left:2%;bottom:7%;z-index:1}
+.sbc-p3{width:55%;height:58%;right:1%;bottom:11%;z-index:3}
+.sbc-flag{position:absolute;top:13%;left:0;z-index:5;background:var(--accent);color:#fff;width:66px;height:46px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 20px rgba(0,0,0,.3);clip-path:polygon(0 0,100% 0,100% 100%,0 100%,16% 50%)}
+.sbc-flag svg{width:24px;height:24px}
+.sbc-price{position:absolute;right:3%;bottom:4%;z-index:6;background:#fff;border-radius:12px;padding:13px 22px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.sbc-price span{display:block;font-size:13px;font-weight:600;color:#1b1b1e}
+.sbc-price b{font-family:var(--font-display);font-size:25px;color:var(--accent);line-height:1;white-space:nowrap}
 .stock-countdown{display:flex;gap:12px}
 .ct-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:16px 20px;text-align:center;min-width:76px}
 .ct-num{font-family:var(--font-display);font-size:28px;font-weight:700;line-height:1;color:var(--accent);margin-bottom:4px}
 .ct-lbl{font-size:10px;opacity:0.6;text-transform:uppercase;letter-spacing:0.08em}
-@media (max-width:1100px){.sb2{grid-template-columns:1fr;padding:32px}.sb2-text h3{font-size:28px}.sb2-img{min-height:200px}.sb2-disc{width:80px;height:80px}.sb2-disc b{font-size:15px}}
+@media (max-width:1100px){.sb2{grid-template-columns:1fr;padding:32px}.sb2-text h3{font-size:28px}.sb2-collage{min-height:260px}.sbc-price b{font-size:20px}}
 .trade-form-block{background:var(--bg-card);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden}
 .tf-img{background:#0a0a0a url('../images/tradein-otsenka.jpg') center/cover no-repeat;min-height:520px}
 .tf-wrap{padding:40px;display:flex;flex-direction:column;gap:18px}
@@ -418,7 +426,7 @@ section{padding:64px 0}
 .trade-banner h2{font-family:var(--font-display);font-size:36px;font-weight:600;line-height:1.05;margin-bottom:14px}
 .trade-banner h2 span{color:var(--accent)}
 .trade-banner p{font-size:15px;opacity:.85;max-width:440px;line-height:1.5;margin-bottom:22px}
-.tb-scene{position:relative;background:var(--bg-dark) center/cover no-repeat;min-height:300px;overflow:hidden;-webkit-mask-image:radial-gradient(ellipse 88% 92% at 55% 50%,#000 58%,transparent 100%);mask-image:radial-gradient(ellipse 88% 92% at 55% 50%,#000 58%,transparent 100%)}
+.tb-scene{position:relative;background:var(--bg-dark) center/contain no-repeat;min-height:300px;overflow:hidden}
 .tb-car{position:absolute;top:50%;transform:translateY(-50%);background-repeat:no-repeat;background-position:center;background-size:contain;height:58%}
 .tb-old{left:-4%;width:52%;opacity:.42;filter:grayscale(.5)}
 .tb-new{right:-2%;width:64%}
