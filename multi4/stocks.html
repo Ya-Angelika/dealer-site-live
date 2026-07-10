@@ -15,12 +15,38 @@
     <div class="head-actions">
       <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+      <button type="button" class="burger js-mob-open" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
-<section class="page-hero"><div class="container">
+<div class="mob-menu" id="mobMenu" hidden>
+  <div class="mob-head">
+    <a href="index.html" class="mob-logo">АЦ<span> · </span>АВТОСАЛОН</a>
+    <button type="button" class="mob-close js-mob-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav"><a href="auto.html">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html" class="is-active">Акции</a><a href="contacts.html">Контакты</a></nav>
+  <div class="mob-actions">
+    <a href="tel:+74951234567" class="btn btn-on-dark">+7 (968) 655-19-72</a>
+    <button type="button" class="btn btn-outline-on-dark js-modal-open" data-modal="callModal">Перезвоните мне</button>
+  </div>
+</div>
+<section class="page-hero ph-banner-wrap"><div class="container">
 <div class="breadcrumb"><a href="index.html">Главная</a> · <span>Акции</span></div>
-<h1>Акции и <span>спецпредложения</span></h1><p class="ph-sub">9 актуальных программ.</p>
+<div class="ph-banner">
+  <div class="ph-banner-text">
+    <h1>Акции<br>и <span>спецпредложения</span></h1>
+    <p>9 действующих программ. Выгода до 400 000 ₽ при покупке автомобиля в этом месяце.</p>
+    <div class="ph-banner-cta">
+      <button type="button" class="btn btn-primary js-modal-open" data-modal="reqModal">Оставить заявку</button>
+      <a href="quiz.html" class="btn btn-outline-on-dark">Подобрать авто</a>
+    </div>
+  </div>
+  <div class="ph-banner-img" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div>
+</div>
 </div></section>
 <section><div class="container">
 <div class="sb2" style="margin-bottom:32px">
@@ -36,15 +62,11 @@
     <a href="auto.html" class="btn btn-on-dark" style="margin-top:22px">Каталог распродажи</a>
   </div>
   <div class="sb2-collage">
-    <div class="sbc-dots"></div>
-    <div class="sbc-panel sbc-p1"><i style="background-image:url('images/cars/car-3-chery-tiggo7.png')"></i></div>
-    <div class="sbc-panel sbc-p2"><i style="background-image:url('images/cars/car-2-haval-jolion.png')"></i></div>
-    <div class="sbc-panel sbc-p3"><i style="background-image:url('images/cars/car-1-geely-atlas.png')"></i></div>
-    <div class="sbc-flag">%</div>
-    <div class="sbc-price"><span>за</span><b>2 490 000 ₽</b></div>
+    <img src="images/collage-stocks.svg" alt="Автомобили распродажи" class="sbc-img">
+    <div class="sbc-price"><span>Выгода до</span><b>400 000 ₽</b></div>
   </div>
 </div>
-<div class="section-head"><div class="eyebrow">Все программы</div><h2>Актуальные акции</h2></div>
+<div class="section-head"><h2>Актуальные акции</h2></div>
 <div class="stocks-grid-c"><article class="stock-card-c">
   <div class="stock-img-c" style="background-image:url('images/stock-1-liquidation.jpg');background-size:cover;background-position:center"></div>
   <div class="stock-content-c">

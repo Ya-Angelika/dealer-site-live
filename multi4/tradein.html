@@ -15,18 +15,43 @@
     <div class="head-actions">
       <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+      <button type="button" class="burger js-mob-open" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
-<section class="page-hero"><div class="container">
+<div class="mob-menu" id="mobMenu" hidden>
+  <div class="mob-head">
+    <a href="index.html" class="mob-logo">АЦ<span> · </span>АВТОСАЛОН</a>
+    <button type="button" class="mob-close js-mob-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav"><a href="auto.html">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html" class="is-active">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html">Контакты</a></nav>
+  <div class="mob-actions">
+    <a href="tel:+74951234567" class="btn btn-on-dark">+7 (968) 655-19-72</a>
+    <button type="button" class="btn btn-outline-on-dark js-modal-open" data-modal="callModal">Перезвоните мне</button>
+  </div>
+</div>
+<section class="page-hero ph-banner-wrap"><div class="container">
 <div class="breadcrumb"><a href="index.html">Главная</a> · <span>Обмен авто</span></div>
-<h1>Обмен авто<br>за <span>один день</span></h1><p class="ph-sub">Оценим за 30 минут, цена выше рынка на 5-10%.</p>
+<div class="ph-banner">
+  <div class="ph-banner-text">
+    <h1>Обмен авто<br>за <span>один день</span></h1>
+    <p>Оценим ваш автомобиль за 30 минут и предложим цену выше рынка на 5-10%. Старое авто — как первый взнос.</p>
+    <div class="ph-banner-cta">
+      <button type="button" class="btn btn-primary js-modal-open" data-modal="reqModal">Оставить заявку</button>
+      <a href="quiz.html" class="btn btn-outline-on-dark">Подобрать авто</a>
+    </div>
+  </div>
+  <div class="ph-banner-img" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div>
+</div>
 </div></section>
 <section><div class="container">
 <div class="trade-banner">
   <div>
-    <div class="eyebrow" style="color:rgba(255,255,255,0.7)">Выгодный обмен</div>
-    <h2>Обменяйте<br>своё авто <span>выгодно</span></h2>
+    <h2>Обменяйте своё авто <span>выгодно</span></h2>
     <p>Оценим за 30 минут. Цена выше рынка на 5-10%. Используйте свой авто как первоначальный взнос.</p>
     <a href="#" class="btn btn-on-dark">Оценить онлайн</a>
   </div>
@@ -35,7 +60,7 @@
 </div></section>
 
 <section><div class="container">
-<div class="section-head"><div class="eyebrow">Как происходит</div><h2>4 шага до обмена</h2></div>
+<div class="section-head"><h2>4 шага до обмена</h2></div>
 <div class="steps-grid">
   <div class="step-card"><div class="step-num">01</div><div><div class="step-title">Оставьте заявку</div><div class="step-desc">Данные об авто + предварительная оценка онлайн.</div></div></div>
   <div class="step-card"><div class="step-num">02</div><div><div class="step-title">Бесплатная оценка</div><div class="step-desc">Эксперт осмотрит авто за 30 минут.</div></div></div>
@@ -49,8 +74,7 @@
   <div class="tf-img"></div>
   <div class="tf-wrap">
     <div>
-      <div class="eyebrow">Оценка авто</div>
-      <h2 style="font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1.1">Оценим за 30 минут</h2>
+      <h2 style="font-family:var(--font-display);font-size:28px;font-weight:600;line-height:1.15">Оценим ваше авто за 30 минут</h2>
       <p style="font-size:14px;color:var(--text-muted);margin-top:6px">Принимаем авто любых марок.</p>
     </div>
     <div class="tf-stats">
@@ -76,7 +100,7 @@
 </div></section>
 
 <section><div class="container">
-<div class="section-head"><div class="eyebrow">Почему мы</div><h2>Преимущества обмена</h2></div>
+<div class="section-head"><h2>Преимущества обмена</h2></div>
 <div class="adv-grid">
   <div class="adv-card"><div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><h3>Выгодная оценка</h3><p>Цена выше рынка на 5–10%. Честная стоимость без занижения.</p></div>
   <div class="adv-card"><div class="adv-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div><h3>Быстро и без хлопот</h3><p>Весь обмен за один день. Сами оформляем все документы.</p></div>

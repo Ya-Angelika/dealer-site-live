@@ -15,12 +15,38 @@
     <div class="head-actions">
       <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+      <button type="button" class="burger js-mob-open" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
-<section class="page-hero"><div class="container">
+<div class="mob-menu" id="mobMenu" hidden>
+  <div class="mob-head">
+    <a href="index.html" class="mob-logo">АЦ<span> · </span>АВТОСАЛОН</a>
+    <button type="button" class="mob-close js-mob-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav"><a href="auto.html" class="is-active">Каталог</a><a href="credit.html">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html">Контакты</a></nav>
+  <div class="mob-actions">
+    <a href="tel:+74951234567" class="btn btn-on-dark">+7 (968) 655-19-72</a>
+    <button type="button" class="btn btn-outline-on-dark js-modal-open" data-modal="callModal">Перезвоните мне</button>
+  </div>
+</div>
+<section class="page-hero ph-banner-wrap"><div class="container">
 <div class="breadcrumb"><a href="index.html">Главная</a> · <span>Каталог</span></div>
-<h1><span>Каталог</span> автомобилей</h1><p class="ph-sub">240+ автомобилей · 16 брендов · кредит от 4,9% · Обмен авто за день</p>
+<div class="ph-banner">
+  <div class="ph-banner-text">
+    <h1>Каталог новых<br>автомобилей <span>2026</span></h1>
+    <p>240+ автомобилей 16 брендов в наличии. Кредит от 4,9%, обмен авто за один день.</p>
+    <div class="ph-banner-cta">
+      <button type="button" class="btn btn-primary js-modal-open" data-modal="reqModal">Оставить заявку</button>
+      <a href="quiz.html" class="btn btn-outline-on-dark">Подобрать авто</a>
+    </div>
+  </div>
+  <div class="ph-banner-img" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div>
+</div>
 </div></section>
 <section><div class="container">
 <div class="cat-layout">
@@ -48,65 +74,65 @@
     </div>
   </div>
   <div class="cat-results"><article class="cat-card-r">
-  <div class="cat-card-tag-r">Хит</div>
+  <div class="cat-card-tag-r">Хит</div><div class="cat-card-benefit">−200 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Geely</div>
     <div class="cat-card-name-r">Geely Atlas Pro</div>
     <div class="cat-card-meta-r">Кроссовер · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 2 490 000 ₽</div>
+    <div class="cat-card-price-r">от 2 490 000 ₽<s class="cat-card-old">2 690 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Geely Atlas Pro">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Geely Atlas Pro">Обмен авто</button>
     </div>
   </div>
 </article><article class="cat-card-r">
-  
+  <div class="cat-card-benefit">−150 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-2-haval-jolion.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Haval</div>
     <div class="cat-card-name-r">Haval Jolion</div>
     <div class="cat-card-meta-r">Кроссовер · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 1 690 000 ₽</div>
+    <div class="cat-card-price-r">от 1 690 000 ₽<s class="cat-card-old">1 840 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Haval Jolion">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Haval Jolion">Обмен авто</button>
     </div>
   </div>
 </article><article class="cat-card-r">
-  
+  <div class="cat-card-benefit">−180 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-3-chery-tiggo7.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Chery</div>
     <div class="cat-card-name-r">Chery Tiggo 7 Pro</div>
     <div class="cat-card-meta-r">Кроссовер · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 1 990 000 ₽</div>
+    <div class="cat-card-price-r">от 1 990 000 ₽<s class="cat-card-old">2 170 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Chery Tiggo 7 Pro">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Chery Tiggo 7 Pro">Обмен авто</button>
     </div>
   </div>
 </article><article class="cat-card-r">
-  
+  <div class="cat-card-benefit">−250 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-4-exeed-txl.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">EXEED</div>
     <div class="cat-card-name-r">EXEED TXL</div>
     <div class="cat-card-meta-r">SUV · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 2 590 000 ₽</div>
+    <div class="cat-card-price-r">от 2 590 000 ₽<s class="cat-card-old">2 840 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="EXEED TXL">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="EXEED TXL">Обмен авто</button>
     </div>
   </div>
 </article><article class="cat-card-r">
-  <div class="cat-card-tag-r">Хит</div>
+  <div class="cat-card-tag-r">Хит</div><div class="cat-card-benefit">−300 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-5-hyundai-tucson.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Hyundai</div>
     <div class="cat-card-name-r">Hyundai Tucson N</div>
     <div class="cat-card-meta-r">Кроссовер · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 3 990 000 ₽</div>
+    <div class="cat-card-price-r">от 3 990 000 ₽<s class="cat-card-old">4 290 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Hyundai Tucson N">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Hyundai Tucson N">Обмен авто</button>
@@ -126,13 +152,13 @@
     </div>
   </div>
 </article><article class="cat-card-r">
-  <div class="cat-card-tag-r">Хит</div>
+  <div class="cat-card-tag-r">Хит</div><div class="cat-card-benefit">−120 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-7-geely-coolray.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Geely</div>
     <div class="cat-card-name-r">Geely Coolray</div>
     <div class="cat-card-meta-r">Кроссовер · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 1 890 000 ₽</div>
+    <div class="cat-card-price-r">от 1 890 000 ₽<s class="cat-card-old">2 010 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Geely Coolray">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Geely Coolray">Обмен авто</button>
@@ -152,13 +178,13 @@
     </div>
   </div>
 </article><article class="cat-card-r">
-  <div class="cat-card-tag-r">Хит</div>
+  <div class="cat-card-tag-r">Хит</div><div class="cat-card-benefit">−220 000 ₽</div>
   <a href="car.html" class="cat-card-imglink"><div class="cat-card-img-r" style="background-image:url('images/cars/car-9-haval-dargo.png')"></div></a>
   <div class="cat-card-body-r">
     <div class="cat-card-brand-r">Haval</div>
     <div class="cat-card-name-r">Haval Dargo</div>
     <div class="cat-card-meta-r">Внедорожник · АКПП · 2024</div>
-    <div class="cat-card-price-r">от 2 690 000 ₽</div>
+    <div class="cat-card-price-r">от 2 690 000 ₽<s class="cat-card-old">2 910 000 ₽</s></div>
     <div class="cat-card-cta">
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="creditModal" data-car="Haval Dargo">Купить в кредит</button>
       <button type="button" class="btn btn-outline btn-sm js-modal-open" data-modal="tradeinModal" data-car="Haval Dargo">Обмен авто</button>

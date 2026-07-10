@@ -15,26 +15,64 @@
     <div class="head-actions">
       <a href="tel:+74951234567" class="head-phone">+7 (968) 655-19-72</a>
       <button type="button" class="btn btn-primary btn-sm js-modal-open" data-modal="callModal">Заказать звонок</button>
+      <button type="button" class="burger js-mob-open" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobMenu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
     </div>
   </div>
 </header>
-<section class="page-hero"><div class="container">
+<div class="mob-menu" id="mobMenu" hidden>
+  <div class="mob-head">
+    <a href="index.html" class="mob-logo">АЦ<span> · </span>АВТОСАЛОН</a>
+    <button type="button" class="mob-close js-mob-close" aria-label="Закрыть меню">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mob-nav"><a href="auto.html">Каталог</a><a href="credit.html" class="is-active">Автокредит</a><a href="tradein.html">Обмен авто</a><a href="stocks.html">Акции</a><a href="contacts.html">Контакты</a></nav>
+  <div class="mob-actions">
+    <a href="tel:+74951234567" class="btn btn-on-dark">+7 (968) 655-19-72</a>
+    <button type="button" class="btn btn-outline-on-dark js-modal-open" data-modal="callModal">Перезвоните мне</button>
+  </div>
+</div>
+<section class="page-hero ph-banner-wrap"><div class="container">
 <div class="breadcrumb"><a href="index.html">Главная</a> · <span>Автокредит</span></div>
-<h1>Автокредит<br>в <span>Москва</span></h1><p class="ph-sub">Решение за 15 минут. 96% одобрений. Партнёрские программы 12 банков. Ставка от 4,9%.</p>
+<div class="ph-banner">
+  <div class="ph-banner-text">
+    <h1>Автокредит<br>от <span>4,9%</span> годовых</h1>
+    <p>Подберём выгодное предложение среди 12 банков-партнёров. Решение за 15 минут, одобрение 96%.</p>
+    <div class="ph-banner-cta">
+      <button type="button" class="btn btn-primary js-modal-open" data-modal="reqModal">Оставить заявку</button>
+      <a href="quiz.html" class="btn btn-outline-on-dark">Подобрать авто</a>
+    </div>
+  </div>
+  <div class="ph-banner-img" style="background-image:url('images/cars/car-1-geely-atlas.png')"></div>
+</div>
+<div class="ph-facts">
+  <div class="ph-fact"><div class="ph-fico"><svg viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="13" rx="2"/><path d="M3 11h18M16 15h2"/></svg></div><div><div class="ph-fval">до 5 млн ₽</div><div class="ph-flbl">Сумма кредита</div></div></div>
+  <div class="ph-fact"><div class="ph-fico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h4a1.75 1.75 0 010 3.5h-3a1.75 1.75 0 000 3.5h4"/></svg></div><div><div class="ph-fval">от 0 ₽</div><div class="ph-flbl">Первоначальный взнос</div></div></div>
+  <div class="ph-fact"><div class="ph-fico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></div><div><div class="ph-fval">6 мес — 8 лет</div><div class="ph-flbl">Срок кредита</div></div></div>
+  <div class="ph-fact"><div class="ph-fico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><div><div class="ph-fval">15 минут</div><div class="ph-flbl">Решение по кредиту</div></div></div>
+</div>
 </div></section>
 <section><div class="container">
-<div class="section-head"><div class="eyebrow">Калькулятор</div><h2>Рассчитайте условия по кредиту</h2></div>
+
 <div class="c3">
   <div class="c3-title">Кредитный онлайн-калькулятор</div>
   <div class="c3-grid">
     <div class="c3-left">
-      <div class="c3-field"><div class="c3-flabel">Сумма кредита</div><div class="c3-fval">1 890 000 ₽ <span class="c3-pencil">✎</span></div><div class="c3-track"><div class="c3-fill" style="width:85%"></div><div class="c3-thumb" style="left:85%"></div></div></div>
+      <div class="c3-field"><div class="c3-flabel">Стоимость автомобиля</div><div class="c3-fval" id="c3v-sum">1 890 000 ₽</div>
+        <input type="range" class="c3-range" id="c3-sum" min="100000" max="5000000" step="10000" value="1890000" aria-label="Стоимость автомобиля">
+        <div class="c3-scale"><span>100 тыс.</span><span>5 млн</span></div></div>
       <div class="c3-two">
-        <div class="c3-field"><div class="c3-flabel">Первый платёж</div><div class="c3-fval">500 000 ₽ <span class="c3-pencil">✎</span></div><div class="c3-track"><div class="c3-fill" style="width:25%"></div><div class="c3-thumb" style="left:25%"></div></div></div>
-        <div class="c3-field"><div class="c3-flabel">Срок кредита</div><div class="c3-fval">60 мес.</div><div class="c3-track"><div class="c3-fill" style="width:50%"></div><div class="c3-thumb" style="left:50%"></div></div></div>
+        <div class="c3-field"><div class="c3-flabel">Первоначальный взнос</div><div class="c3-fval" id="c3v-down">500 000 ₽</div>
+          <input type="range" class="c3-range" id="c3-down" min="0" max="5000000" step="10000" value="500000" aria-label="Первоначальный взнос">
+          <div class="c3-scale"><span>0 ₽</span><span id="c3-down-max">5 млн</span></div></div>
+        <div class="c3-field"><div class="c3-flabel">Срок кредита</div><div class="c3-fval" id="c3v-term">60 мес.</div>
+          <input type="range" class="c3-range" id="c3-term" min="6" max="96" step="6" value="60" aria-label="Срок кредита">
+          <div class="c3-scale"><span>6 мес.</span><span>8 лет</span></div></div>
       </div>
-      <div class="c3-res"><div><div class="c3-reslbl">Ежемесячный платёж, от</div><div class="c3-resval">31 280 ₽</div></div><div><div class="c3-reslbl">Минимальная ставка</div><div class="c3-resval">4,9 %</div></div></div>
-      <div class="c3-note">ⓘ Расчёт носит информационный характер, не является публичной офертой</div>
+      <div class="c3-res"><div><div class="c3-reslbl">Ежемесячный платёж, от</div><div class="c3-resval" id="c3v-month">31 280 ₽</div></div><div><div class="c3-reslbl">Минимальная ставка</div><div class="c3-resval">4,9 %</div></div></div>
+      <div class="c3-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg><span>Расчёт носит информационный характер, не является публичной офертой. Ставка от 4,9% годовых.</span></div>
     </div>
     <form class="c3-right js-modal-form">
       <div class="c3-rtitle">Оставить заявку на автокредит</div>
@@ -60,7 +98,7 @@
 </div></section>
 
 <section><div class="container">
-<div class="section-head"><div class="eyebrow">Как оформить</div><h2>4 шага</h2></div>
+<div class="section-head"><h2>Как оформить кредит за 4 шага</h2></div>
 <div class="steps-grid">
   <div class="step-card"><div class="step-num">01</div><div><div class="step-title">Заявка онлайн</div><div class="step-desc">Заполните форму.</div></div></div>
   <div class="step-card"><div class="step-num">02</div><div><div class="step-title">Решение за 15 мин</div><div class="step-desc">Менеджер свяжется.</div></div></div>
@@ -71,8 +109,7 @@
 
 <section style="background:var(--bg-card)">
   <div class="container">
-    <div class="section-head"><div class="eyebrow">Банки-партнёры</div>
-    <h2>12+ банков для кредита</h2>
+    <div class="section-head"><h2>12+ банков-партнёров для кредита</h2>
     <p>Подберём вам выгодные условия. Решение онлайн за 15 минут.</p></div>
     <div class="banks-row-c" style="padding:24px"><div class="bank-cell-c"><img src="images/logos/banks/sber.png" alt="Сбер" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/alfa.png" alt="Альфа-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/tbank.svg" alt="Т-Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/gazprom.png" alt="Газпромбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/rshb.png" alt="Россельхозбанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/otp.png" alt="ОТП БАНК" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/pochta.png" alt="Почта Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/absolut.png" alt="Абсолют Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/expo.png" alt="Экспобанк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/zenit.png" alt="Банк Зенит" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/akbars.png" alt="Ак Барс Банк" loading="lazy"></div><div class="bank-cell-c"><img src="images/logos/banks/sovkom.png" alt="Совкомбанк" loading="lazy"></div></div>
     <div style="margin-top:24px"><a href="credit.html" class="btn btn-primary">Рассчитать кредит →</a></div>
@@ -80,7 +117,7 @@
 </section>
 
 <section style="background:var(--bg-card)"><div class="container">
-<div class="section-head"><div class="eyebrow">Требования</div><h2>К заёмщику</h2></div>
+<div class="section-head"><h2>Требования к заёмщику</h2></div>
 <div class="rules-grid">
   <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 4-6 8-6s8 2 8 6"/></svg></div><div class="rule-text"><strong>Возраст</strong>21-65 лет</div></div>
   <div class="rule-item"><div class="rule-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><circle cx="8.5" cy="11" r="2"/><path d="M14 10h4M14 14h3M5.5 16c.4-1.3 1.6-2 3-2s2.6.7 3 2"/></svg></div><div class="rule-text"><strong>Гражданство</strong>РФ</div></div>

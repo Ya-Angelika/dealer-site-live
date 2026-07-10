@@ -39,7 +39,9 @@ section{padding:64px 0}
 .section-head{margin-bottom:40px;max-width:720px}
 .section-head.row{display:flex;justify-content:space-between;align-items:end;max-width:none;gap:24px}
 .eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:700;margin-bottom:14px}
-.section-head h2{font-family:var(--font-display);font-size:40px;font-weight:600;line-height:1.05;letter-spacing:-0.01em;margin-bottom:12px}
+/* Типографическая шкала (ratio ~1.27): h1 38 > h2 30 > body 15 > eyebrow 11.
+   Раньше h1 44 и h2 40 были почти равны — иерархии не читалось. */
+.section-head h2{font-family:var(--font-display);font-size:30px;font-weight:600;line-height:1.2;letter-spacing:-0.01em;margin-bottom:10px}
 .section-head p{font-size:16px;color:var(--text-muted);max-width:580px;line-height:1.5}
 /* HEADER */
 .head{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:16px 0}
@@ -55,14 +57,45 @@ section{padding:64px 0}
 .head-actions{display:flex;gap:12px;align-items:center}
 .head-phone{font-family:var(--font-display);font-size:15px;font-weight:600;transition:color 0.15s}
 .head-phone:hover{color:var(--accent)}
+/* MOBILE MENU (слот mob-menu, вариант mob-v0-open).
+   Бургер появляется там же, где прячется .head-nav (<=1100px). */
+.burger{display:none;width:42px;height:42px;padding:0;align-items:center;justify-content:center;background:transparent;border:1px solid var(--border);border-radius:var(--r);color:var(--text)}
+.burger svg{width:22px;height:22px}
+.mob-menu{position:fixed;inset:0;z-index:200;background:var(--bg-dark);color:var(--text-on-dark);padding:20px 24px 32px;display:flex;flex-direction:column;overflow-y:auto}
+.mob-menu[hidden]{display:none}
+.mob-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
+.mob-logo{font-family:var(--font-display);font-size:20px;font-weight:700;letter-spacing:0.04em;color:#fff}
+.mob-logo span{color:var(--accent)}
+.mob-close{width:38px;height:38px;padding:0;border:none;border-radius:50%;background:rgba(255,255,255,0.1);color:#fff;display:flex;align-items:center;justify-content:center}
+.mob-close svg{width:20px;height:20px}
+.mob-nav{display:flex;flex-direction:column}
+.mob-nav a{font-family:var(--font-display);font-size:22px;font-weight:600;padding:14px 0;border-bottom:1px solid rgba(255,255,255,0.08);color:#fff}
+.mob-nav a.is-active{color:var(--accent)}
+.mob-actions{display:flex;flex-direction:column;gap:10px;margin-top:auto;padding-top:28px}
+.mob-actions .btn{width:100%}
 /* PAGE HERO */
-.page-hero{background:var(--bg-card);padding:48px 0 40px;border-bottom:1px solid var(--border)}
-.breadcrumb{font-size:12px;color:var(--text-muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:0.08em}
+.page-hero{background:var(--bg-card);padding:40px 0 36px;border-bottom:1px solid var(--border)}
+.breadcrumb{font-size:11px;color:var(--text-muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:0.08em}
 .breadcrumb a:hover{color:var(--accent)}
 .breadcrumb span{color:var(--text)}
-.page-hero h1{font-family:var(--font-display);font-size:44px;font-weight:600;line-height:1;letter-spacing:-0.015em;margin-bottom:12px}
+/* line-height 1.15, а не 1: при переносе на 2 строки текст слипался */
+.page-hero h1{font-family:var(--font-display);font-size:38px;font-weight:600;line-height:1.15;letter-spacing:-0.02em;margin-bottom:10px;max-width:780px}
 .page-hero h1 span{color:var(--accent)}
-.page-hero .ph-sub{font-size:16px;color:var(--text-muted);max-width:580px;line-height:1.5}
+.page-hero .ph-sub{font-size:15px;color:var(--text-muted);max-width:620px;line-height:1.6}
+/* page-hero, вариант ph-inline-stats: H1 слева + 3 факта справа в строку (multi-6) */
+.ph-inline h1{text-transform:uppercase;font-weight:800;margin-bottom:0}
+.ph-inline-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
+.ph-stats{display:flex;gap:28px;flex-wrap:wrap}
+.ph-stats div{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);border-left:2px solid var(--accent);padding-left:10px;max-width:150px;line-height:1.4}
+/* page-hero, вариант ph-banner: тёмный градиентный баннер с оффером (multi-4) */
+.ph-banner-wrap{padding-bottom:40px}
+.ph-banner{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:center;padding:40px 44px;border-radius:var(--r);background:linear-gradient(115deg,var(--bg-dark) 0%,var(--accent) 210%);color:#fff;overflow:hidden;min-height:280px}
+.ph-banner h1{font-family:var(--font-display);font-size:34px;font-weight:600;line-height:1.15;letter-spacing:-.02em;color:#fff;margin-bottom:12px;max-width:none}
+.ph-banner h1 span{color:#fff;opacity:.72}
+.ph-banner-text p{font-size:14px;opacity:.82;line-height:1.55;max-width:430px;margin-bottom:24px}
+.ph-banner-cta{display:flex;gap:12px;flex-wrap:wrap}
+.ph-banner-img{align-self:stretch;min-height:200px;border-radius:var(--r);background-repeat:no-repeat;background-position:center;background-size:contain}
+@media(max-width:900px){.ph-banner{grid-template-columns:1fr;padding:28px}.ph-banner h1{font-size:26px}.ph-banner-img{min-height:170px}}
 /* FOOTER */
 .foot{background:var(--bg-dark);color:var(--text-on-dark);padding:48px 0 28px}
 .foot-top{display:grid;grid-template-columns:1fr 2fr 1fr;gap:40px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,0.12);align-items:start}
@@ -120,6 +153,8 @@ section{padding:64px 0}
 /* CAR CARDS */
 .cat-card-r{background:var(--bg-card);position:relative;overflow:hidden}
 .cat-card-tag-r{position:absolute;top:12px;left:12px;background:var(--accent);color:#fff;padding:4px 10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;z-index:2}
+.cat-card-benefit{position:absolute;top:12px;right:12px;background:var(--bg-dark);color:#fff;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:0.02em;z-index:2;border-radius:2px}
+.cat-card-old{margin-left:8px;font-size:14px;font-weight:400;color:var(--text-muted);text-decoration:line-through}
 /* СТАНДАРТ: прозрачный PNG-вырезка машины на сером фоне карточки + серый «пол»-градиент снизу.
    НЕ полноразмерное JPEG с запечённым фоном (cover). PNG берутся в images/cars/. */
 .cat-card-img-r{aspect-ratio:4/3;background-color:var(--bg-card);background-repeat:no-repeat;background-position:center 58%;background-size:88%;position:relative}
@@ -180,17 +215,19 @@ section{padding:64px 0}
 .faq-a{display:none;padding:0 50px 24px 0;font-size:14px;color:var(--text-muted);line-height:1.6}
 .faq-item.is-open .faq-a{display:block}
 @media (max-width:1100px){
-  .head-nav{display:none}.container{padding:0 20px}
+  .head-nav{display:none}.burger{display:flex}.container{padding:0 20px}
   .brands-grid-c{grid-template-columns:repeat(4,1fr)}
   .stats-grid-c{grid-template-columns:repeat(2,1fr)}
   .banks-row-c{grid-template-columns:repeat(3,1fr)}
   .stocks-grid-c{grid-template-columns:1fr}
-  .page-hero h1{font-size:32px}
+  .page-hero h1{font-size:32px}.section-head h2{font-size:26px}
   .foot-top{grid-template-columns:1fr;gap:24px}
   .foot-contacts{text-align:left}.foot-nav{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){
-  section{padding:48px 0}.section-head h2{font-size:28px}.page-hero h1{font-size:26px}
+  section{padding:48px 0}.section-head h2{font-size:22px}.page-hero h1{font-size:26px}.page-hero{padding:28px 0 24px}
+  /* «Заказать звонок» и телефон дублируются внутри мобильного меню — в шапке прячем */
+  .head-actions .btn-primary,.head-phone{display:none}
   .brands-grid-c{grid-template-columns:repeat(3,1fr)}
   .brand-card{min-height:100px;padding:14px 8px}.brand-card img{height:40px}.brand-name{font-size:11px}
   .stat-num-c{font-size:38px}.banks-row-c{grid-template-columns:repeat(2,1fr)}
@@ -319,6 +356,15 @@ section{padding:64px 0}
 .rule-text strong{display:block;font-family:var(--font-display);font-size:15px;font-weight:600;margin-bottom:4px}
 .calc-range{width:100%;height:8px;accent-color:var(--accent);cursor:pointer;margin-top:10px}
 .calc-value{font-variant-numeric:tabular-nums}
+/* Факты под заголовком страницы кредита (по мотивам multi-4) */
+.ph-facts{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+.ph-fact{display:flex;align-items:center;gap:12px;background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.ph-fico{flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center}
+.ph-fico svg{width:18px;height:18px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ph-fval{font-family:var(--font-display);font-size:16px;font-weight:700;line-height:1.2}
+.ph-flbl{font-size:12px;color:var(--text-muted);margin-top:2px}
+@media(max-width:1100px){.ph-facts{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ph-facts{grid-template-columns:1fr}}
 /* calc-multi-3 (из библиотеки, адаптирован под токены темы) */
 .c3-title{font-family:var(--font-display);font-size:26px;font-weight:700;margin-bottom:18px}
 .c3-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;align-items:stretch}
@@ -326,16 +372,25 @@ section{padding:64px 0}
 .c3-right{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:26px}
 .c3-field{background:#eef1f6;border-radius:8px;padding:12px 16px;margin-bottom:14px}
 .c3-flabel{font-size:11px;color:var(--text-muted)}
-.c3-fval{font-size:17px;font-weight:700}
-.c3-pencil{color:#9aa1b0;float:right;font-size:13px}
+.c3-fval{font-size:17px;font-weight:700;font-variant-numeric:tabular-nums}
 .c3-two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.c3-track{height:4px;background:#e3e6ee;border-radius:2px;position:relative;margin:8px 0}
-.c3-fill{position:absolute;height:100%;border-radius:2px;background:var(--accent)}
-.c3-thumb{position:absolute;top:50%;transform:translate(-50%,-50%);width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.25)}
+/* Ползунок: нативный input[type=range].
+   ВАЖНО: высота самого input — 20px (зона захвата мыши), иначе по кружку не попасть.
+   Видимый трек 4px рисуется псевдоэлементом ::-*-track, а не фоном инпута.
+   Заливка слева: webkit — градиент по --p (ставит JS), firefox — нативный ::-moz-range-progress. */
+.c3-range{-webkit-appearance:none;appearance:none;display:block;width:100%;height:20px;margin:6px 0 2px;background:transparent;cursor:pointer}
+.c3-range::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(var(--accent),var(--accent)) 0/var(--p,50%) 100% no-repeat #e3e6ee}
+.c3-range::-webkit-slider-thumb{-webkit-appearance:none;width:16px;height:16px;margin-top:-6px;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.25);cursor:pointer}
+.c3-range::-moz-range-track{height:4px;border-radius:2px;background:#e3e6ee}
+.c3-range::-moz-range-progress{height:4px;border-radius:2px;background:var(--accent)}
+.c3-range::-moz-range-thumb{width:16px;height:16px;box-sizing:border-box;border-radius:50%;background:#fff;border:2px solid var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.25);cursor:pointer}
+.c3-range:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px}
+.c3-scale{display:flex;justify-content:space-between;font-size:10px;color:#9aa1b0}
 .c3-res{display:flex;gap:40px;margin:14px 0}
 .c3-reslbl{font-size:12px;color:var(--text-muted)}
-.c3-resval{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--accent)}
-.c3-note{font-size:11px;color:#9aa1b0}
+.c3-resval{font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}
+.c3-note{display:flex;gap:8px;align-items:flex-start;font-size:11px;color:#9aa1b0;line-height:1.4}
+.c3-note svg{flex:none;width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round}
 .c3-rtitle{font-family:var(--font-display);font-size:20px;font-weight:700;margin-bottom:8px}
 .c3-rsub{font-size:13px;color:var(--text-muted);line-height:1.5;margin-bottom:18px}
 .c3-form{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
@@ -357,7 +412,7 @@ section{padding:64px 0}
 .hero2-banner::after{content:'';position:absolute;left:0;bottom:0;width:100%;height:6px;background:var(--accent)}
 .hero2-text{position:relative;z-index:2}
 .hero2-badge{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:7px 15px;margin-bottom:22px}
-.hero2-text h1{font-family:var(--font-display);font-size:54px;font-weight:600;line-height:0.98;letter-spacing:-.02em;margin-bottom:24px}
+.hero2-text h1{font-family:var(--font-display);font-size:44px;font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:24px}
 .hero2-text h1 span{color:var(--accent)}
 .hero2-list{list-style:none;margin-bottom:30px;display:flex;flex-direction:column;gap:13px}
 .hero2-list li{position:relative;padding-left:32px;font-size:16px;color:var(--text);line-height:1.3}
@@ -371,6 +426,11 @@ section{padding:64px 0}
 .teaser p{font-size:13px;opacity:0.7;line-height:1.4;margin-bottom:16px}
 .teaser .t-eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:0.18em;color:var(--accent);font-weight:700;margin-bottom:10px}
 .cat-mini-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+/* Скроллбар карусели скрыт, поэтому «есть ещё карточки справа» показываем
+   градиентом-затуханием у края. В конце прокрутки он гаснет (класс is-end ставит JS). */
+.carousel{position:relative}
+.carousel::after{content:'';position:absolute;top:0;right:0;bottom:72px;width:64px;pointer-events:none;background:linear-gradient(90deg,transparent,var(--bg));transition:opacity .2s}
+.carousel.is-end::after{opacity:0}
 .cat-mini-scroll{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x proximity;scrollbar-width:none;-ms-overflow-style:none}
 .cat-mini-scroll>*{flex:0 0 262px;scroll-snap-align:start}
 .cat-mini-scroll::-webkit-scrollbar{display:none}
@@ -386,24 +446,41 @@ section{padding:64px 0}
 .carousel-dot.is-active{width:28px;border-radius:5px;background:var(--accent)}
 @media (max-width:720px){.cat-mini-scroll>*{flex-basis:80%}}
 @media (max-width:1100px){
-  .hero2-banner{grid-template-columns:1fr;padding:40px 32px;min-height:auto}.hero2-text h1{font-size:40px}.hero2-img{min-height:240px;order:-1}
+  .hero2-banner{grid-template-columns:1fr;padding:40px 32px;min-height:auto}.hero2-text h1{font-size:34px}.hero2-img{min-height:240px;order:-1}
   .teaser-grid{grid-template-columns:1fr}.cat-mini-grid{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:720px){.hero2-text h1{font-size:30px}.hero2-banner{padding:28px 20px}.cat-mini-grid{grid-template-columns:1fr}}
 /* hero-v5-bigtype (из библиотеки, адаптирован под токены темы) */
 .hero-v5-bigtype{display:grid;grid-template-columns:1fr 1.15fr;min-height:360px;background:var(--bg-dark);border-radius:var(--r);overflow:hidden}
 .hero-v5-bigtype .h5-panel{padding:46px 44px;display:flex;flex-direction:column;justify-content:center;color:var(--text-on-dark)}
-.hero-v5-bigtype .h5-title{font-family:var(--font-display);font-size:56px;font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:0.98;margin-bottom:16px}
+.hero-v5-bigtype .h5-title{font-family:var(--font-display);font-size:44px;font-weight:700;text-transform:uppercase;letter-spacing:-0.02em;line-height:1.08;margin-bottom:16px}
 .hero-v5-bigtype .h5-title span{color:var(--accent)}
 .hero-v5-bigtype .h5-sub{font-size:15px;opacity:0.78;line-height:1.5;margin-bottom:26px;max-width:440px}
 .hero-v5-bigtype .h5-btn{width:100%;justify-content:center}
 .hero-v5-bigtype .h5-photo{background:var(--bg-card);position:relative;min-height:360px;background-repeat:no-repeat;background-position:center;background-size:contain}
-.hero-v5-bigtype .h5-nav{position:absolute;bottom:16px;left:24px;display:flex;align-items:center;gap:10px}
-.hero-v5-bigtype .h5-nav .dots{display:flex;gap:6px}
-.hero-v5-bigtype .h5-nav .dots span{width:7px;height:7px;border-radius:50%;background:rgba(0,0,0,0.18)}
-.hero-v5-bigtype .h5-nav .dots span.on{background:var(--accent)}
-.hero-v5-bigtype .h5-nav .arw{color:rgba(0,0,0,0.4);font-size:16px}
-@media (max-width:900px){.hero-v5-bigtype{grid-template-columns:1fr}.hero-v5-bigtype .h5-title{font-size:40px}.hero-v5-bigtype .h5-photo{min-height:240px}}
+/* Навигация hero: обе стрелки + рабочие точки. Иконки — line-SVG (icon-style),
+   а не глифы «‹ ›»: глиф был один (правый) и терялся на фоне. */
+.hero-v5-bigtype .h5-nav{position:absolute;bottom:16px;left:24px;display:flex;align-items:center;gap:12px}
+.hero-v5-bigtype .h5-arw{width:32px;height:32px;padding:0;border-radius:50%;border:1px solid var(--border);background:var(--bg);color:var(--text);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.15s}
+.hero-v5-bigtype .h5-arw svg{width:16px;height:16px}
+.hero-v5-bigtype .h5-arw:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-v5-bigtype .h5-dots{display:flex;gap:6px}
+.hero-v5-bigtype .h5-dot{width:7px;height:7px;padding:0;border:none;border-radius:50%;background:rgba(0,0,0,0.18);cursor:pointer;transition:width .2s,background .2s}
+.hero-v5-bigtype .h5-dot.is-active{width:22px;border-radius:4px;background:var(--accent)}
+@media (max-width:900px){.hero-v5-bigtype{grid-template-columns:1fr}.hero-v5-bigtype .h5-title{font-size:34px}.hero-v5-bigtype .h5-photo{min-height:240px}}
+@media (max-width:560px){.hero-v5-bigtype .h5-title{font-size:28px}}
+/* Слот Body types, вариант body-v0-cards (1:1 с sections-library-v15.html) */
+.body-row{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.body-cell{display:block;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--r);padding:18px 12px;text-align:center;cursor:pointer;transition:all .15s}
+.body-cell:hover{border-color:var(--text);transform:translateY(-2px)}
+.body-icon{aspect-ratio:16/10;background:var(--bg);border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;overflow:hidden;margin-bottom:10px}
+.body-icon img{width:100%;height:100%;object-fit:cover;transition:transform .25s}
+.body-cell:hover .body-icon img{transform:scale(1.04)}
+.body-name{font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--text)}
+.body-count{font-size:11px;color:var(--text-muted);margin-top:2px}
+.cat-sub{font-size:13px;color:var(--text-muted);margin-top:4px}
+@media(max-width:1100px){.body-row{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.body-row{grid-template-columns:repeat(2,1fr)}}
 .quiz-wrap{background:var(--bg-card);padding:48px}
 .quiz-consultant{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--border)}
 .qc-avatar{width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--bg-dark));flex:0 0 60px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-display);font-size:24px;font-weight:700}
@@ -419,27 +496,27 @@ section{padding:64px 0}
 .quiz-option.is-active{border-color:var(--accent);background:rgba(186,23,31,0.05);color:var(--accent)}
 .quiz-controls{display:flex;justify-content:space-between;padding-top:18px;border-top:1px solid var(--border)}
 @media (max-width:1100px){.quiz-options{grid-template-columns:repeat(2,1fr)}}
-.sb2{position:relative;background:var(--bg-dark);color:#fff;padding:48px;display:grid;grid-template-columns:1.15fr 1fr;gap:32px;align-items:center;overflow:hidden}
+.sb2{position:relative;background:var(--bg-dark);color:#fff;padding:48px;display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center;overflow:hidden;min-height:420px}
 .sb2-badge{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:7px 15px;margin-bottom:20px}
 .sb2-text h3{font-family:var(--font-display);font-size:42px;font-weight:600;line-height:1;letter-spacing:-.02em;margin-bottom:14px}
 .sb2-text h3 span{color:var(--accent)}
 .sb2-text p{opacity:.8;font-size:15px;line-height:1.5;max-width:470px;margin-bottom:22px}
-.sb2-collage{position:relative;align-self:stretch;min-height:360px;border-radius:var(--r);overflow:hidden;background:transparent}
-.sbc-dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.2px);background-size:18px 18px}
-.sbc-panel{position:absolute;border-radius:14px;overflow:hidden;transform:skewX(-9deg);box-shadow:0 16px 34px rgba(0,0,0,.45);background:#202024;border:1px solid rgba(255,255,255,.06)}
-.sbc-panel i{position:absolute;inset:-14%;display:block;transform:skewX(9deg);background:#202024 center/cover no-repeat}
-.sbc-p1{width:50%;height:46%;top:2%;left:29%;z-index:2}
-.sbc-p2{width:48%;height:46%;left:2%;bottom:3%;z-index:1}
-.sbc-p3{width:52%;height:52%;right:1%;bottom:5%;z-index:3}
-.sbc-flag{position:absolute;top:4%;left:2%;z-index:5;width:60px;height:60px;border-radius:50%;background:var(--accent);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:800;font-size:27px;box-shadow:0 8px 22px rgba(0,0,0,.4)}
-.sbc-price{position:absolute;right:3%;bottom:4%;z-index:6;background:#fff;border-radius:12px;padding:13px 22px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.25)}
+/* Коллаж баннера — готовый SVG (панели с авто + значок скидки цветом темы).
+   contain: вписывается целиком, ничего не обрезается.
+   Тёмная подложка (--dark-plate) нужна только там, где баннер не тёмный сам по себе. */
+/* Отрицательные поля: коллаж выходит из padding баннера и упирается в его края.
+   Высоту баннера при этом задаёт текстовая колонка (min-height у .sb2), картинка её не тянет. */
+.sb2-collage{position:relative;align-self:stretch;margin:-48px -48px -48px 0}
+.sb2-collage.has-plate{background:#0b0b0d;background-image:radial-gradient(rgba(255,255,255,.07) 1.2px,transparent 1.2px);background-size:18px 18px}
+.sbc-img{display:block;width:100%;height:100%;object-fit:contain;object-position:center}
+.sbc-price{position:absolute;right:7%;bottom:9%;z-index:6;background:#fff;border-radius:12px;padding:13px 22px;text-align:center;box-shadow:0 12px 28px rgba(0,0,0,.25)}
 .sbc-price span{display:block;font-size:13px;font-weight:600;color:#1b1b1e}
 .sbc-price b{font-family:var(--font-display);font-size:25px;color:var(--accent);line-height:1;white-space:nowrap}
 .stock-countdown{display:flex;gap:12px}
 .ct-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:16px 20px;text-align:center;min-width:76px}
 .ct-num{font-family:var(--font-display);font-size:28px;font-weight:700;line-height:1;color:var(--accent);margin-bottom:4px}
 .ct-lbl{font-size:10px;opacity:0.6;text-transform:uppercase;letter-spacing:0.08em}
-@media (max-width:1100px){.sb2{grid-template-columns:1fr;padding:32px}.sb2-text h3{font-size:28px}.sb2-collage{min-height:260px}.sbc-price b{font-size:20px}}
+@media (max-width:1100px){.sb2{grid-template-columns:1fr;padding:32px;min-height:0}.sb2-text h3{font-size:28px}.sb2-collage{margin:0 -32px -32px;min-height:260px}.sbc-price b{font-size:20px}}
 .trade-form-block{background:var(--bg-card);padding:0;display:grid;grid-template-columns:1fr 1fr;gap:0;overflow:hidden}
 .tf-img{background:#0a0a0a url('../images/tradein-otsenka.jpg') center/cover no-repeat;min-height:520px}
 .tf-wrap{padding:40px;display:flex;flex-direction:column;gap:18px}
