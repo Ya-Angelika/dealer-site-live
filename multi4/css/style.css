@@ -87,6 +87,13 @@ section{padding:64px 0}
 .ph-inline-row{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;flex-wrap:wrap}
 .ph-stats{display:flex;gap:28px;flex-wrap:wrap}
 .ph-stats div{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text-muted);border-left:2px solid var(--accent);padding-left:10px;max-width:150px;line-height:1.4}
+/* page-hero, ph-raw: в шапку поднят собственный баннер страницы (обмен / акции).
+   Остаются только крошки + баннер, ниже по странице он больше не повторяется. */
+.ph-raw{padding-bottom:40px}
+.ph-raw .trade-banner,.ph-raw .sb2{margin-bottom:0;border-radius:var(--r)}
+/* h1 внутри баннера — белый и своего размера: глобальный .page-hero h1 не должен его перебить */
+.ph-raw .trade-banner h1,.ph-raw .sb2-text h1{color:#fff;max-width:none}
+.ph-raw .trade-banner h1 span,.ph-raw .sb2-text h1 span{color:var(--accent)}
 /* page-hero, вариант ph-banner: тёмный градиентный баннер с оффером (multi-4) */
 .ph-banner-wrap{padding-bottom:40px}
 .ph-banner{position:relative;display:grid;grid-template-columns:1.05fr 1fr;gap:24px;align-items:center;padding:40px 44px;border-radius:var(--r);background:linear-gradient(115deg,var(--bg-dark) 0%,var(--accent) 210%);color:#fff;overflow:hidden;min-height:280px}
@@ -498,8 +505,9 @@ section{padding:64px 0}
 @media (max-width:1100px){.quiz-options{grid-template-columns:repeat(2,1fr)}}
 .sb2{position:relative;background:var(--bg-dark);color:#fff;padding:48px;display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:center;overflow:hidden;min-height:420px}
 .sb2-badge{display:inline-block;background:var(--accent);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;padding:7px 15px;margin-bottom:20px}
-.sb2-text h3{font-family:var(--font-display);font-size:42px;font-weight:600;line-height:1;letter-spacing:-.02em;margin-bottom:14px}
-.sb2-text h3 span{color:var(--accent)}
+/* h1 — когда баннер поднят в шапку (ph-raw), h3 — когда стоит секцией ниже */
+.sb2-text h1,.sb2-text h3{font-family:var(--font-display);font-size:42px;font-weight:600;line-height:1.08;letter-spacing:-.02em;margin-bottom:14px;max-width:none;color:#fff}
+.sb2-text h1 span,.sb2-text h3 span{color:var(--accent)}
 .sb2-text p{opacity:.8;font-size:15px;line-height:1.5;max-width:470px;margin-bottom:22px}
 /* Коллаж баннера — готовый SVG (панели с авто + значок скидки цветом темы).
    contain: вписывается целиком, ничего не обрезается.
@@ -540,8 +548,9 @@ section{padding:64px 0}
 .adv-card h3{font-family:var(--font-display);font-size:20px;font-weight:600;line-height:1.1}
 .adv-card p{font-size:14px;color:var(--text-muted);line-height:1.5}
 .trade-banner{background:var(--bg-dark);color:var(--text-on-dark);padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;overflow:hidden;margin-bottom:8px}
-.trade-banner h2{font-family:var(--font-display);font-size:36px;font-weight:600;line-height:1.05;margin-bottom:14px}
-.trade-banner h2 span{color:var(--accent)}
+/* h1 — когда баннер поднят в шапку (ph-raw), h2 — когда стоит секцией ниже */
+.trade-banner h1,.trade-banner h2{font-family:var(--font-display);font-size:36px;font-weight:600;line-height:1.1;letter-spacing:-.02em;margin-bottom:14px;max-width:none}
+.trade-banner h1 span,.trade-banner h2 span{color:var(--accent)}
 .trade-banner p{font-size:15px;opacity:.85;max-width:440px;line-height:1.5;margin-bottom:22px}
 .tb-scene{position:relative;background:var(--bg-dark) center/cover no-repeat;min-height:340px;overflow:hidden}
 .tb-car{position:absolute;top:50%;transform:translateY(-50%);background-repeat:no-repeat;background-position:center;background-size:contain;height:58%}
